@@ -27,7 +27,7 @@ fn generate_password(
         .map(|_| *charset.choose(&mut rng).unwrap())
         .collect();
 
-    format!("Mot de passe généré : {}", password)
+    password
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
