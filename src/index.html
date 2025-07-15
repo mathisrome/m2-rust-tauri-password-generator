@@ -1,39 +1,61 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tauri App</title>
-    <script type="module" src="/main.js" defer></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Générateur de Mot de Passe</title>
+  <script type="module" src="/main.js" defer></script>
+</head>
 
-  <body>
-    <main class="container">
-      <h1>Welcome to Tauri</h1>
+<body>
+<main class="container">
+  <h1>Générateur de Mot de Passe</h1>
 
-      <div class="row">
-        <a href="https://tauri.app" target="_blank">
-          <img src="/assets/tauri.svg" class="logo tauri" alt="Tauri logo" />
-        </a>
-        <a
-          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-          target="_blank"
-        >
-          <img
-            src="/assets/javascript.svg"
-            class="logo vanilla"
-            alt="JavaScript logo"
-          />
-        </a>
-      </div>
-      <p>Click on the Tauri logo to learn more about the framework</p>
+  <form class="password-form" id="password-form">
+    <div class="form-group">
+      <label for="password-length">Longueur</label>
+      <input
+              type="number"
+              id="password-length"
+              min="8"
+              max="50"
+              value="12"
+              class="input-control"
+      />
+    </div>
 
-      <form class="row" id="greet-form">
-        <input id="greet-input" placeholder="Enter a name..." />
-        <button type="submit">Greet</button>
-      </form>
-      <p id="greet-msg"></p>
-    </main>
-  </body>
+    <div class="form-group checkbox-group">
+      <label class="checkbox-container">
+        <input type="checkbox" id="include-uppercase" checked />
+        <span class="checkmark"></span>
+        Inclure les majuscules
+      </label>
+    </div>
+
+    <div class="form-group checkbox-group">
+      <label class="checkbox-container">
+        <input type="checkbox" id="include-numbers" checked />
+        <span class="checkmark"></span>
+        Inclure les chiffres
+      </label>
+    </div>
+
+    <div class="form-group checkbox-group">
+      <label class="checkbox-container">
+        <input type="checkbox" id="include-symbols" checked />
+        <span class="checkmark"></span>
+        Inclure les symboles
+      </label>
+    </div>
+
+    <button type="submit" class="generate-btn">Générer</button>
+
+    <div class="password-result">
+      <input type="text" id="password-output" readonly />
+      <button type="button" class="copy-btn" id="copy-btn">Copier</button>
+    </div>
+  </form>
+</main>
+</body>
 </html>
