@@ -2,6 +2,8 @@
 
 - ROME Mathis
 - SOMVEILLE Quentin
+- PERDRIX Olivier
+- SCHULER Kenza
 
 ## Démarrer l'application
 
